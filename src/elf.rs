@@ -6626,6 +6626,117 @@ pub const DT_E2K_NO_SELFINIT: i64 = DT_LOPROC + 0x1020;
 
 pub const DT_E2K_NUM: i64 = 0x1021;
 
+// RX values for `FileHeader32::e_flags`.
+
+/// `double` is 64 bits.
+pub const EF_RX_64BIT_DOUBLES: u32 = 1 << 0;
+/// Uses the DSP instructions.
+pub const EF_RX_DSP: u32 = 1 << 1;
+/// Position independent data.
+pub const EF_RX_PID: u32 = 1 << 2;
+/// Stacked arguments use natural alignment.
+pub const EF_RX_ABI: u32 = 1 << 3;
+/// `EF_RX_SINSNS_YES` is significant.
+pub const EF_RX_SINSNS_SET: u32 = 1 << 6;
+/// Uses the string instructions.
+pub const EF_RX_SINSNS_YES: u32 = 1 << 7;
+/// Mask for `EF_RX_SINSNS_SET` and `EF_RX_SINSNS_YES`.
+pub const EF_RX_SINSNS_MASK: u32 = 3 << 6;
+/// Uses the RXv2 instructions.
+pub const EF_RX_V2: u32 = 1 << 8;
+/// Uses the RXv3 instructions.
+pub const EF_RX_V3: u32 = 1 << 9;
+
+// RX values for `Rel*::r_type`.
+
+/// No reloc
+pub const R_RX_NONE: u32 = 0x00;
+/// Direct 32 bit
+pub const R_RX_DIR32: u32 = 0x01;
+/// Direct 24 bit, signed
+pub const R_RX_DIR24S: u32 = 0x02;
+/// Direct 16 bit
+pub const R_RX_DIR16: u32 = 0x03;
+/// Direct 16 bit, unsigned
+pub const R_RX_DIR16U: u32 = 0x04;
+/// Direct 16 bit, signed
+pub const R_RX_DIR16S: u32 = 0x05;
+/// Direct 8 bit
+pub const R_RX_DIR8: u32 = 0x06;
+/// Direct 8 bit, unsigned
+pub const R_RX_DIR8U: u32 = 0x07;
+/// Direct 8 bit, signed
+pub const R_RX_DIR8S: u32 = 0x08;
+/// PC relative 24 bit, signed
+pub const R_RX_DIR24S_PCREL: u32 = 0x09;
+/// PC relative 16 bit, signed
+pub const R_RX_DIR16S_PCREL: u32 = 0x0a;
+/// PC relative 8 bit, signed
+pub const R_RX_DIR8S_PCREL: u32 = 0x0b;
+/// Direct 16 bit, unsigned, scaled by 4
+pub const R_RX_DIR16UL: u32 = 0x0c;
+/// Direct 16 bit, unsigned, scaled by 2
+pub const R_RX_DIR16UW: u32 = 0x0d;
+/// Direct 8 bit, unsigned, scaled by 4
+pub const R_RX_DIR8UL: u32 = 0x0e;
+/// Direct 8 bit, unsigned, scaled by 2
+pub const R_RX_DIR8UW: u32 = 0x0f;
+/// Direct 32 bit, byte-swapped
+pub const R_RX_DIR32_REV: u32 = 0x10;
+/// Direct 16 bit, byte-swapped
+pub const R_RX_DIR16_REV: u32 = 0x11;
+/// PC relative 3 bit, unsigned
+pub const R_RX_DIR3U_PCREL: u32 = 0x12;
+pub const R_RX_RH_3_PCREL: u32 = 0x20;
+pub const R_RX_RH_16_OP: u32 = 0x21;
+pub const R_RX_RH_24_OP: u32 = 0x22;
+pub const R_RX_RH_32_OP: u32 = 0x23;
+pub const R_RX_RH_24_UNS: u32 = 0x24;
+pub const R_RX_RH_8_NEG: u32 = 0x25;
+pub const R_RX_RH_16_NEG: u32 = 0x26;
+pub const R_RX_RH_24_NEG: u32 = 0x27;
+pub const R_RX_RH_32_NEG: u32 = 0x28;
+pub const R_RX_RH_DIFF: u32 = 0x29;
+pub const R_RX_RH_GPRELB: u32 = 0x2a;
+pub const R_RX_RH_GPRELW: u32 = 0x2b;
+pub const R_RX_RH_GPRELL: u32 = 0x2c;
+/// Marks code that the linker may relax
+pub const R_RX_RH_RELAX: u32 = 0x2d;
+pub const R_RX_ABS32: u32 = 0x41;
+pub const R_RX_ABS24S: u32 = 0x42;
+pub const R_RX_ABS16: u32 = 0x43;
+pub const R_RX_ABS16U: u32 = 0x44;
+pub const R_RX_ABS16S: u32 = 0x45;
+pub const R_RX_ABS8: u32 = 0x46;
+pub const R_RX_ABS8U: u32 = 0x47;
+pub const R_RX_ABS8S: u32 = 0x48;
+pub const R_RX_ABS24S_PCREL: u32 = 0x49;
+pub const R_RX_ABS16S_PCREL: u32 = 0x4a;
+pub const R_RX_ABS8S_PCREL: u32 = 0x4b;
+pub const R_RX_ABS16UL: u32 = 0x4c;
+pub const R_RX_ABS16UW: u32 = 0x4d;
+pub const R_RX_ABS8UL: u32 = 0x4e;
+pub const R_RX_ABS8UW: u32 = 0x4f;
+pub const R_RX_ABS32_REV: u32 = 0x50;
+pub const R_RX_ABS16_REV: u32 = 0x51;
+pub const R_RX_SYM: u32 = 0x80;
+pub const R_RX_OPNEG: u32 = 0x81;
+pub const R_RX_OPADD: u32 = 0x82;
+pub const R_RX_OPSUB: u32 = 0x83;
+pub const R_RX_OPMUL: u32 = 0x84;
+pub const R_RX_OPDIV: u32 = 0x85;
+pub const R_RX_OPSHLA: u32 = 0x86;
+pub const R_RX_OPSHRA: u32 = 0x87;
+pub const R_RX_OPSCTSIZE: u32 = 0x88;
+pub const R_RX_OPSCTTOP: u32 = 0x8d;
+pub const R_RX_OPAND: u32 = 0x90;
+pub const R_RX_OPOR: u32 = 0x91;
+pub const R_RX_OPXOR: u32 = 0x92;
+pub const R_RX_OPNOT: u32 = 0x93;
+pub const R_RX_OPMOD: u32 = 0x94;
+pub const R_RX_OPROMTOP: u32 = 0x95;
+pub const R_RX_OPRAMTOP: u32 = 0x96;
+
 #[allow(non_upper_case_globals)]
 pub const Tag_File: u8 = 1;
 #[allow(non_upper_case_globals)]

@@ -313,6 +313,7 @@ fn elf_any() {
         (Architecture::PowerPc64, Endianness::Big),
         (Architecture::Riscv32, Endianness::Little),
         (Architecture::Riscv64, Endianness::Little),
+        (Architecture::Rx, Endianness::Little),
         (Architecture::S390x, Endianness::Big),
         (Architecture::Sbf, Endianness::Little),
         (Architecture::Sparc, Endianness::Big),
