@@ -315,6 +315,7 @@ where
             (elf::EM_SPARCV9, true) => Architecture::Sparc64,
             (elf::EM_XTENSA, false) => Architecture::Xtensa,
             (elf::EM_SH, false) => Architecture::SuperH,
+            (elf::EM_TRICORE, false) => Architecture::TriCore,
             _ => Architecture::Unknown,
         }
     }
@@ -802,7 +803,7 @@ pub trait FileHeader: Debug + Pod + read::private::Sealed {
         let shstrtab_data = shstrtab
             .data(endian, data)
             .read_error("Invalid ELF shstrtab offset or size")?;
-        Ok(StringTable::from_bytes(shstrtab_data))
+        Ok(StringTable::new(shstrtab_data))
     }
 
     /// Return the section table.
